@@ -28,11 +28,28 @@ plt.annotate(
 )
 
 range_distance = x.iloc[-1]
+flight_time = data["Time"].iloc[-1]
 
 print("Horizontal Range:", range_distance, "m")
+plt.scatter(x.iloc[-1], y.iloc[-1])
+
+plt.annotate(
+    f"Range = {range_distance:.2f} m",
+    (x.iloc[-1], y.iloc[-1])
+)
+
 plt.xlabel("Horizontal Distance (m)")
 plt.ylabel("Height (m)")
 plt.title("Rocket Trajectory")
+
+plt.text(
+    0.02, 0.95,
+    f"Max Height: {max_height:.2f} m\n"
+    f"Range: {range_distance:.2f} m\n"
+    f"Flight Time: {flight_time:.2f} s",
+    transform=plt.gca().transAxes,
+    verticalalignment="top"
+)
 
 plt.grid()
 plt.show()
