@@ -35,7 +35,4 @@ V1 assumes:
 - Constant initial velocity
 - Launch and landing at the same altitude
 
-### Horizontal Velocity
-
-```text
-Vx = V₀ × cos(θ)
+)
